@@ -4,7 +4,7 @@
 ## Install 
 https://github.com/nikkinikki-org/OpenWrt-nikki
 1. Prepare curl
-```
+```sh
 opkg update
 opkg install curl
 ```
@@ -18,7 +18,7 @@ curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/f
 ```
 
 2. Install
-```
+```sh
 # you can install from shell or `Software` menu in LuCI
 # for opkg
 opkg install nikki
@@ -35,10 +35,10 @@ https://github.com/MetaCubeX/meta-rules-dat/tree/meta/geo/geosite
 1. 在软件包那里先手动安装 
 `luci-i18n-samba4-zh-cn`  `script-utils`
 2. 安装iStore商店(ARM64 & x86-64通用)
-```
+```sh
 wget -qO imm.sh https://cafe.cpolar.top/wkdaily/zero3/raw/branch/main/zero3/imm.sh && chmod +x imm.sh && ./imm.sh
 ```
 3. 安装网络向导和首页(ARM64 & x86-64通用)
-```
+```sh
 is-opkg install luci-i18n-quickstart-zh-cn
 ```
