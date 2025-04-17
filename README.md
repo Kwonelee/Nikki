@@ -10,7 +10,7 @@ opkg install curl
 ```
 
 3. Add Feed
-```
+```sh
 # only needs to be run once
 # https://gh-proxy.com/https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/feed.sh
 
