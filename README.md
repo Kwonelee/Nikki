@@ -3,11 +3,20 @@
 
 ## Install 
 https://github.com/nikkinikki-org/OpenWrt-nikki
-1. Add Feed
+1. Prepare curl
+```
+opkg update
+opkg install curl
+```
+
+3. Add Feed
 ```
 # only needs to be run once
+# https://gh-proxy.com/https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/feed.sh
+
 curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/feed.sh | ash
 ```
+
 2. Install
 ```
 # you can install from shell or `Software` menu in LuCI
