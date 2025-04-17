@@ -43,8 +43,12 @@ wget -qO imm.sh https://cafe.cpolar.top/wkdaily/zero3/raw/branch/main/zero3/imm.
 is-opkg install luci-i18n-quickstart-zh-cn
 ```
 
-## 一键安装 分区扩容 app
+## Overlay 分区扩容 
 
+1.手动扩容：
+https://www.youtube.com/watch?v=YwbwzuXKNlg
+
+2. 安装分区扩容 luci-app-partexp_all.ipk
 ```sh
 # 一键安装 sirpdboy分区扩容 app
 wget -O install.sh https://cafe.cpolar.top/wkdaily/OneKeyExpand/raw/branch/main/install.sh && chmod +x install.sh && ./install.sh
