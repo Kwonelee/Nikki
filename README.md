@@ -1,4 +1,5 @@
 # Nikki
+自用的一些配置，没啥好东西
 
 ## Rules
 https://github.com/MetaCubeX/meta-rules-dat/tree/meta/geo/geosite
