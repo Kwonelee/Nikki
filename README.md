@@ -1,6 +1,23 @@
 # Nikki
 自用的一些配置，没啥好东西
 
+## Install 
+https://github.com/nikkinikki-org/OpenWrt-nikki
+1. Add Feed
+```
+# only needs to be run once
+curl -s -L https://github.com/nikkinikki-org/OpenWrt-nikki/raw/refs/heads/main/feed.sh | ash
+```
+2. Install
+```
+# you can install from shell or `Software` menu in LuCI
+# for opkg
+opkg install nikki
+opkg install luci-app-nikki
+opkg install luci-i18n-nikki-zh-cn
+```
+
+
 ## Rules
 https://github.com/MetaCubeX/meta-rules-dat/tree/meta/geo/geosite
 
