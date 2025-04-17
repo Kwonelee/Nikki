@@ -45,7 +45,7 @@ is-opkg install luci-i18n-quickstart-zh-cn
 
 ## Overlay 分区扩容 
 
-1.手动扩容：
+1. 手动扩容：
 https://www.youtube.com/watch?v=YwbwzuXKNlg
 
 2. 安装分区扩容 luci-app-partexp_all.ipk
