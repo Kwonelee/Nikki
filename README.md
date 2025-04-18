@@ -59,11 +59,11 @@ https://github.com/sirpdboy/luci-app-partexp
 下载ipk后安装
 
 ## Backup & Restore
-https://github.com/wukongdaily/OpenBackRestore
+修改自 https://github.com/wukongdaily/OpenBackRestore
 
 1. 下载脚本
 ```sh
-wget -O backup.run https://cafe.cpolar.cn/wkdaily/OpenBackRestore/raw/branch/master/backup/backup.run
+wget -O backup.sh https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/command/backup.sh
 ```
 
 2. 执行备份
@@ -75,5 +75,5 @@ sh backup.run /opt/backup
 3. 恢复备份
 ```sh
 # 将备份档案提前上传到 /tmp/upload/ 或者放在 restore.run 的同一目录(修改了原版)
-wget -O restore.run https://cafe.cpolar.cn/wkdaily/OpenBackRestore/raw/branch/master/backup/restore.run && sh restore.run
+wget -O restore.sh https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/command/restore.sh && chmod +x restore.sh && sh restore.sh
 ```
