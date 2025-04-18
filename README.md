@@ -43,6 +43,11 @@ wget -qO imm.sh https://cafe.cpolar.top/wkdaily/zero3/raw/branch/main/zero3/imm.
 ```sh
 is-opkg install luci-i18n-quickstart-zh-cn
 ```
+4. 卸载 iStore
+```
+wget -qO unistore.sh https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/command/unistore.sh  && chmod +x unistore.sh && ./unistore.sh
+```
+
 
 ## Overlay 分区扩容 
 
