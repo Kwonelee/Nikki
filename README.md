@@ -54,17 +54,9 @@ wget -qO unistore.sh https://raw.githubusercontent.com/imken/Nikki/refs/heads/ma
 1. 手动扩容：
 https://www.youtube.com/watch?v=YwbwzuXKNlg
 
-2. 安装分区扩容 luci-app-partexp_all.ipk
-```sh
-# 一键安装 sirpdboy分区扩容 app
-wget -O install.sh https://cafe.cpolar.top/wkdaily/OneKeyExpand/raw/branch/main/install.sh && chmod +x install.sh && ./install.sh
-
-# 如果上述代码访问不到。可直接复制下面的内容。
-opkg update
-wget https://cafe.cpolar.top/wkdaily/OneKeyExpand/raw/branch/main/luci-app-partexp_all.ipk
-opkg install luci-app-partexp_all.ipk 2>/dev/null
-echo "安装成功"
-```
+2. 安装sirpdboy的luci-app-partexp分区扩容
+https://github.com/sirpdboy/luci-app-partexp
+下载ipk后安装
 
 ## Backup & Restore
 https://github.com/wukongdaily/OpenBackRestore
