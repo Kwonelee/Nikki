@@ -31,6 +31,7 @@ opkg install luci-i18n-nikki-zh-cn
 ```sh
 15 0 * * * opkg update && opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
 ```
+每天晚上 0:15 升级可以升级的所有插件
 
 
 ## Rules
