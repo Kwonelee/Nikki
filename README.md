@@ -26,6 +26,12 @@ opkg install luci-app-nikki
 opkg install luci-i18n-nikki-zh-cn
 ```
 
+## Auto Update
+在'系统'->'计划任务' 中添加:
+```sh
+15 0 * * * opkg update && opkg list-upgradable | cut -f 1 -d ' ' | xargs opkg upgrade
+```
+
 
 ## Rules
 [https://github.com/MetaCubeX/meta-rules-dat/tree/meta/geo/geosite](https://github.com/MetaCubeX/meta-rules-dat/tree/meta/geo-lite/geosite/classical)
