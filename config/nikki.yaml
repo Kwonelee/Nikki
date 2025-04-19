@@ -98,12 +98,12 @@ dns:
  
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
-pr: &pr {type: select, proxies: [🌍 Proxy, 🇭🇰 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, 🌐 全部节点, DIRECT]}
+pr: &pr {type: select, proxies: [🌍 Proxy, 🇭🇰 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, 🌐 全部节点, 🎯 DIRECT]}
 proxy-groups:
   - {name: 🍑 MyProxy, <<: *pr}
-  - {name: 🌍 Proxy, type: select, proxies: [🇭🇰 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, ♻️ 全部自动，🌐 全部节点, DIRECT]}
+  - {name: 🌍 Proxy, type: select, proxies: [🇭🇰 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, ♻️ 全部自动，🌐 全部节点, 🎯 DIRECT]}
   - {name: 📹 YouTube, type: select, proxies: [🇺🇳 负载均衡, 🇭🇰 中文自动, 🇺🇲 美国自动, 🇯🇵 日韩自动, ♻️ 其他自动, ♻️ 全部自动，🌐 全部节点]}
-  - {name: 💻 Develop, type: select, proxies: [🌍 Proxy,🇭🇰 中文自动, 🇺🇲 美国自动,  🇯🇵 日韩自动, ♻️ 其他自动, 🌐 全部节点, DIRECT]}
+  - {name: 💻 Develop, type: select, proxies: [🌍 Proxy,🇭🇰 中文自动, 🇺🇲 美国自动,  🇯🇵 日韩自动, ♻️ 其他自动, 🌐 全部节点, 🎯 DIRECT]}
   - {name: 💥 AI, type: select, proxies: [🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 🤪 IM, type: select, proxies: [🌍 Proxy,🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, ♻️ 其他自动, 🌐 全部节点]}
   - {name: 🎯 DIRECT, type: select, proxies: [DIRECT, 🌍 Proxy]}
@@ -123,7 +123,7 @@ proxy-groups:
   # - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(DIRECT|REJECT)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true}
-# 负载均衡 type: load-balance   strategy: round-robin / consistent-hashing / sticky-sessions
+  # 负载均衡 type: load-balance   strategy: round-robin / consistent-hashing / sticky-sessions
 
 
 # 规则匹配
@@ -196,4 +196,5 @@ rule-providers:
   # geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   # cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
+  
   
