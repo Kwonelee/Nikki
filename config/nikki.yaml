@@ -2,7 +2,7 @@
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://substore.com"
+    url: "https://substore"
     type: http
     interval: 86400
     health-check:
@@ -10,12 +10,12 @@ proxy-providers:
       # url: https://www.gstatic.com/generate_204
       url: https://www.apple.com/library/test/success.html
       interval: 300
-    proxy: DIRECT
+    proxy: Direct
 
 # 节点信息
 proxies:
-  - {name: DIRECT, type: direct}
-  - {name: REJECT, type: reject}
+  - {name: Direct, type: direct}
+  #- {name: REJECT, type: reject}
   
 
 # 全局配置 
@@ -98,32 +98,32 @@ dns:
  
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
-pr: &pr {type: select, proxies: [🌍 Proxy, 🇭🇰 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, 🌐 全部节点, 🎯 DIRECT]}
+pr: &pr {type: select, proxies: [🎯 DIRECT, 🌍 Proxy, 🇨🇳 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, 🌐 全部节点]}
 proxy-groups:
   - {name: 🍑 MyProxy, <<: *pr}
-  - {name: 🌍 Proxy, type: select, proxies: [🇭🇰 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, ♻️ 全部自动，🌐 全部节点, 🎯 DIRECT]}
-  - {name: 📹 YouTube, type: select, proxies: [🇺🇳 负载均衡, 🇭🇰 中文自动, 🇺🇲 美国自动, 🇯🇵 日韩自动, ♻️ 其他自动, ♻️ 全部自动，🌐 全部节点]}
-  - {name: 💻 Develop, type: select, proxies: [🌍 Proxy,🇭🇰 中文自动, 🇺🇲 美国自动,  🇯🇵 日韩自动, ♻️ 其他自动, 🌐 全部节点, 🎯 DIRECT]}
+  - {name: 🌍 Proxy, type: select, proxies: [🇨🇳 中文自动, 🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, 🇺🇲 美国节点, ♻️ 其他自动, ♻️ 全部自动, 🌐 全部节点]}
+  - {name: 📹 YouTube, type: select, proxies: [🇺🇳 负载均衡, 🇨🇳 中文自动, 🇺🇲 美国自动, 🇯🇵 日韩自动, ♻️ 其他自动, ♻️ 全部自动, 🌐 全部节点]}
+  - {name: 💻 Develop, type: select, proxies: [🌍 Proxy,🇨🇳 中文自动, 🇺🇲 美国自动,  🇯🇵 日韩自动, ♻️ 其他自动, 🌐 全部节点, 🎯 DIRECT]}
   - {name: 💥 AI, type: select, proxies: [🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 🤪 IM, type: select, proxies: [🌍 Proxy,🇺🇲 美国自动, 🇸🇬 新加坡自动, 🇭🇰 香港自动, 🏴 台湾自动, 🇯🇵 日韩自动, ♻️ 其他自动, 🌐 全部节点]}
   - {name: 🎯 DIRECT, type: select, proxies: [DIRECT, 🌍 Proxy]}
   - {name: 🚫 REJECT, type: select, proxies: [REJECT, DIRECT]}
   - {name: 🐟 OTHER, <<: *pr}
   
-  - {name: 🇺🇳 负载均衡, type: load-balance, strategy: round-robin, include-all: true, filter: "(?i)广港|广台|广新|香港|HK|Hong Kong|🇭🇰|HongKong|台湾|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|新加坡|SG|坡|狮城|🇸🇬|Singapore", url: https://www.youtube.com/generate_204}
-  - {name: 🇨🇳 中文自动, type: url-test, include-all: true, filter: "(?i)广港|广台|广新|香港|HK|Hong Kong|🇭🇰|HongKong|台湾|TW|Tai Wan|🇹🇼|🇨🇳|TaiWan|Taiwan|新加坡|SG|坡|狮城|🇸🇬|Singapore", url: https://www.youtube.com/generate_204}
-  - {name: 🇺🇲 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|硅谷|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States"}
-  - {name: 🇸🇬 新加坡自动, type: url-test, include-all: true, filter: "(?i)新加坡|SG|坡|狮城|🇸🇬|Singapore"}
+  - {name: 🇺🇳 负载均衡, type: load-balance, strategy: round-robin, include-all: true, filter: "(?i)港|hk|hongkong|hong kong|台|TW|taiwan|Tai wan|新加坡|SG|坡|狮城|Singapore", url: https://www.youtube.com/generate_204}
+  - {name: 🇨🇳 中文自动, type: url-test, include-all: true, filter: "(?i)港|hk|hongkong|hong kong|台|TW|taiwan|Tai wan|新加坡|SG|坡|狮城|Singapore", url: https://www.youtube.com/generate_204}
+  - {name: 🇺🇲 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|硅谷|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加||States"}
+  - {name: 🇸🇬 新加坡自动, type: url-test, include-all: true, filter: "(?i)新加坡|SG|坡|狮城|Singapore"}
   - {name: 🇭🇰 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
-  - {name: 🏴 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台湾|台灣|TW|Tai Wan|🇹🇼|TaiWan|Taiwan))^((?!(港|日|韩|新|深|美)).)*$"}
-  - {name: 🇯🇵 日韩自动, type: url-test, include-all: true, filter: "(?i)日本|JP|川日|东京|大阪|泉日|埼玉|沪日|深日|🇯🇵|Japan|韩国|韓國|KR|首尔|春川|🇰🇷|Korea"}
-  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|硅谷|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|🇺🇸|United States"}
+  - {name: 🏴 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|TW|(?i)Wan))^((?!(港|日|韩|新|深|美)).)*$"}
+  - {name: 🇯🇵 日韩自动, type: url-test, include-all: true, filter: "(?i)日本|JP|川日|东京|大阪|泉日|埼玉|Japan|韩国|韓國|KR|首尔|春川|Korea"}
+  - {name: 🇺🇲 美国节点, type: select, include-all: true, filter: "(?i)美|US|纽约|波特兰|达拉斯|俄勒|凤凰城|费利蒙|硅谷|拉斯|洛杉|圣何塞|圣克拉|西雅|芝加|States"}
   - {name: ♻️ 其他自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?i)波|柬|尼|也|克|比|尔|立|冰|秘|耳|利|埃|希|孟|芬|愛|澳|英|德|南|意|法|拿|墨|印|越|俄|瑞|智|荷|比|巴|沙|班|泰|德|烏|以|Australia|Konghwaguk"}
   # - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   # - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
   - {name: ♻️ 全部自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(DIRECT|REJECT)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true}
-  # 负载均衡 type: load-balance   strategy: round-robin / consistent-hashing / sticky-sessions
+# 负载均衡 type: load-balance   strategy: round-robin / consistent-hashing / sticky-sessions
 
 
 # 规则匹配
@@ -196,5 +196,3 @@ rule-providers:
   # geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   # cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
-  
-  
