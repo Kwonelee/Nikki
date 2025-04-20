@@ -2,6 +2,7 @@ payload:
   # Homebrew
   - DOMAIN-SUFFIX,brew.sh
   - DOMAIN-SUFFIX,ghcr.io
+  - DOMAIN-SUFFIX,greasyfork.org
   
   #################### HomeAssistant
   - DOMAIN-SUFFIX,basemaps.cartocdn.com # 地图的CDN，不代理加载缓慢，其原始服务已被GFW包含
@@ -11,6 +12,8 @@ payload:
   - DOMAIN-SUFFIX,git.openwrt.org # openwrt源码库
   - DOMAIN-SUFFIX,sources.cdn.openwrt.org # openwrt源码库
   - DOMAIN-SUFFIX,mirror2.openwrt.org # openwrt源码库
+  - DOMAIN-SUFFIX,qichiyu.com
+  - DOMAIN-SUFFIX,bulianglin.com
 
   #################### 论坛
   - DOMAIN-SUFFIX,v2rayssr.com # V2RaySSR综合网，禁止大陆IP访问，内有一些教程交流贴
@@ -51,8 +54,6 @@ payload:
   - DOMAIN-SUFFIX,fast.com
   - DOMAIN-SUFFIX,speedcheck.org
   - DOMAIN-SUFFIX,speedtest.net
-  - DOMAIN-SUFFIX,speedtest.cn
-  - DOMAIN-SUFFIX,ustc.edu.cn
   - DOMAIN-SUFFIX,dnscheck.tools
   - DOMAIN-SUFFIX,whoer.net
   - DOMAIN-SUFFIX,browserleaks.com
