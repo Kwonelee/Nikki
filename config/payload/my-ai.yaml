@@ -1,6 +1,7 @@
 payload:
+  # midjourney可以直连，但登录时需要翻墙才能用的 discord， discord和midjourney不在同一个ip登录就出问题，所以midjourney需要和discord同一个代理
+  - DOMAIN-SUFFIX,midjourney.com
   # 内容：Bing
-  # 数量：2条
   - DOMAIN-SUFFIX,bing.com
   - DOMAIN-SUFFIX,copilot.microsoft.com
   - DOMAIN-SUFFIX,copilot.cloud.microsoft
