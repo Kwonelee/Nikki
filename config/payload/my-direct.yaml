@@ -1,6 +1,15 @@
 payload:
   ### 🌐Direct-FISH，此列表被引用到Fakeip-filter，兼具返回真实IP的功能
 
+  # NAME: Autodesk Fusion
+  - DOMAIN-SUFFIX,autodesk.com
+  - DOMAIN-SUFFIX,autodesk360.com
+  - DOMAIN-SUFFIX,akamaiedge.net
+  - DOMAIN-SUFFIX,akamai.com
+  - DOMAIN-SUFFIX,launchdarkly.com
+  - DOMAIN-SUFFIX,amazonaws.com
+  - DOMAIN-SUFFIX,akamaitechnologies.com
+
   #################### 杂项
   # CN域名
   - DOMAIN-SUFFIX,api.ipify.org # ip查询
