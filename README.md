@@ -1,8 +1,11 @@
 # Nikki
 自用的一些配置，没啥好东西
-yaml 配置文件抄袭自 refined-fish 
-https://github.com/refined-fish/clash_rule_fish
-真是好东西啊～感谢他
+
+yaml 配置文件抄袭自：
+### refined-fish 
+### https://github.com/refined-fish/clash_rule_fish
+
+真是好东西啊～感谢他！
 
 ## Install 
 https://github.com/nikkinikki-org/OpenWrt-nikki
