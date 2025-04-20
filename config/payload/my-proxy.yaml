@@ -1,17 +1,17 @@
 payload:
-
-# NAME: Tools
+  # NAME: Tools
   - DOMAIN-SUFFIX,keyshot.com
 
-  - # NAME: News
+  # NAME: News
   - DOMAIN-SUFFIX,rfi.fr
   - DOMAIN-SUFFIX,dw.com
   - DOMAIN-SUFFIX,wordpress.com
 
-  - # NAME: For Fun
+  # NAME: For Fun
   - DOMAIN-SUFFIX,missav.ws
   - DOMAIN-SUFFIX,91porny.com
   - DOMAIN-SUFFIX,pornhub.com
+  
    #################### 🚫Porn-FISH
   - DOMAIN-SUFFIX,zodgame.xyz # ZodGame论坛，主营i社游戏，国内可访问但较慢
   - DOMAIN-SUFFIX,ecchi100.com # 里番在线
