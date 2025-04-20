@@ -84,3 +84,9 @@ sh backup.run /opt/backup
 # 将备份档案提前上传到 /tmp/upload/ 或者放在 restore.run 的同一目录(修改了原版)
 wget -O restore.sh https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/command/restore.sh && chmod +x restore.sh && sh restore.sh
 ```
+
+## 安装 1Panel
+https://github.com/hubhike/1Panel_openwrt
+
+## 图标库
+https://icon-sets.iconify.design/
