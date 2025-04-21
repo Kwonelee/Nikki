@@ -430,22 +430,22 @@ rule-providers:
   my-proxy:
     <<: *rule-providers-general
     url: https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/config/payload/my-proxy.yaml
-    path: ./providers/rule/rule-provider_my-proxy.yaml
+    path: ./payload/my-proxy.yaml
 
   my-direct:
     <<: *rule-providers-general
     url: https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/config/payload/my-direct.yaml
-    path: ./providers/rule/rule-provider_my-direct.yaml
+    path: ./payload/my-direct.yaml
 
   my-ai:
     <<: *rule-providers-general
     url: https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/config/payload/my-ai.yaml
-    path: ./providers/rule/rule-provider_my-ai.yaml
+    path: ./payload/my-ai.yaml
 
   my-develop:
     <<: *rule-providers-general
     url: https://raw.githubusercontent.com/imken/Nikki/refs/heads/main/config/payload/my-develop.yaml
-    path: ./providers/rule/rule-provider_my-develop.yaml
+    path: ./payload/my-develop.yaml
 
 ## 路由规则设置---------------------------------------------------------------------------------------------------
 rules:
