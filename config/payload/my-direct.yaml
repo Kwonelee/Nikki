@@ -4,8 +4,8 @@ payload:
   # macOS 软件下载站
   - DOMAIN-SUFFIX,appstorrent.ru
   - DOMAIN-SUFFIX,heipg.cn
-  - macked.app
-  - digit77.com
+  - DOMAIN-SUFFIX,macked.app
+  - DOMAIN-SUFFIX,digit77.com
   # NAME: Autodesk Fusion
   - DOMAIN-SUFFIX,autodesk.com
   - DOMAIN-SUFFIX,autodesk360.com
