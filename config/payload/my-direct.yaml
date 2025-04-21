@@ -1,6 +1,12 @@
 payload:
   ### 🌐Direct-FISH，此列表被引用到Fakeip-filter，兼具返回真实IP的功能
 
+  # macOS 软件下载站
+  - DOMAIN-SUFFIX,macwk.cn
+  - DOMAIN-SUFFIX,appstorrent.ru
+  - DOMAIN-SUFFIX,heipg.cn
+  - macked.app
+  - digit77.com
   # NAME: Autodesk Fusion
   - DOMAIN-SUFFIX,autodesk.com
   - DOMAIN-SUFFIX,autodesk360.com
