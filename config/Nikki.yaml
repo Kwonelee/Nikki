@@ -199,7 +199,7 @@ proxy-providers-general: &proxy-providers-general  # 代理提供者通用配置
 
 proxy-providers:
   Default:
-    url: "https://substore1"
+    url: "https://substore1"                       # 订阅连接 1
     type: http
     interval: 86400
     health-check:
@@ -209,7 +209,7 @@ proxy-providers:
       interval: 300
     proxy: DIRECT
   MyVPS:
-    url: "https://substore2"
+    url: "https://substore2"                       # 订阅连接 1
     type: http
     interval: 86400
     health-check:
@@ -218,7 +218,7 @@ proxy-providers:
       interval: 300
     proxy: DIRECT
   Free:
-    url: "https://substore3"
+    url: "https://substore3"                       # 订阅连接 1
     type: http
     interval: 86400
     health-check:
@@ -228,7 +228,7 @@ proxy-providers:
     proxy: DIRECT
 
 ## 代理组设置---------------------------------------------------------------------------------------------------
-use-all-proxy-providers: &use-all-proxy-providers  # 代理组通用配置
+use-all-proxy-providers: &use-all-proxy-providers  # 代理组默认使用的订阅连接
   use:
     - Default
     - MyVPS
@@ -319,6 +319,8 @@ proxy-groups:
       - 🏴‍☠️免费节点
       - 🏴其他节点
       - 🏁自建节点
+      - 🖐️MANUAL
+      - ⚠️FALLBACK
     #icon: https://ghfast.top/https://github.com/refined-fish/clash_rule_fish/blob/main/Icons/Microsoft_365_Copilot.png
 
   - name: 💥AI
@@ -327,6 +329,7 @@ proxy-groups:
       - 🇸🇬新加坡节点
       - 🏁自建节点
       - 🇺🇲美国节点
+      - 🖐️MANUAL
     #icon: https://ghfast.top/https://github.com/refined-fish/clash_rule_fish/blob/main/Icons/Chat_GPT.png
 
   - name: 🤪IM
@@ -344,6 +347,7 @@ proxy-groups:
       - 🇺🇲美国节点
       - 🏁自建节点
       - ⏱️FASTEST
+      - 🖐️MANUAL
       - ⚠️FALLBACK
       - DIRECT
     #icon: https://ghfast.top/https://github.com/refined-fish/clash_rule_fish/blob/main/Icons/巴哈姆特.png
