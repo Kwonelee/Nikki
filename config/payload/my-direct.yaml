@@ -12,12 +12,12 @@ payload:
   - DOMAIN-SUFFIX,akamaiedge.net
   - DOMAIN-SUFFIX,akamai.com
   - DOMAIN-SUFFIX,launchdarkly.com
-  - DOMAIN-SUFFIX,amazonaws.com
+  #- DOMAIN-SUFFIX,amazonaws.com
   - DOMAIN-SUFFIX,akamaitechnologies.com
 
   #################### 杂项
   # CN域名
-  - DOMAIN-SUFFIX,api.ipify.org # ip查询
+  - DOMAIN,api.ipify.org # ip查询
   - DOMAIN-SUFFIX,bam.nr-data.net # NewRelic数据上报，很多程序都包含了此功能用于开发者追踪错误，频繁上报者会使用很多流量故强制直连
   - DOMAIN-SUFFIX,sentry.io # sentry错误上报程序，很多程序都包含了此功能用于开发者追踪错误，频繁上报者会使用很多流量故强制直连
   - DOMAIN-SUFFIX,qing-yu.top # CDN
