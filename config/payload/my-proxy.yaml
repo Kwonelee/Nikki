@@ -1,6 +1,7 @@
 payload:
   # NAME: Tools
   - DOMAIN-SUFFIX,keyshot.com
+  - DOMAIN-SUFFIX,macwk.cn
 
   # NAME: News
   - DOMAIN-SUFFIX,rfi.fr
