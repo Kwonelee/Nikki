@@ -195,10 +195,11 @@ proxy-providers-general: &proxy-providers-general  # 代理提供者通用配置
     skip-cert-verify: false                        # 跳过证书验证
     #down: "50 Mbps"                               # 下行限速
     #up: "10 Mbps"                                 # 上行限速
-    ip-version: dual                               # IP版本，可选优先v4或v6，仅v4或v6
+    ip-version: dual                               # 可选dual/ipv4/ipv6/ipv4-prefer/ipv6-prefer，即优先v4或v6，仅v4或v6
 
 proxy-providers:
   Default:
+    <<: *proxy-providers-general
     url: "https://substore1"                       # 订阅连接 1
     type: http
     interval: 86400
@@ -208,8 +209,10 @@ proxy-providers:
       url: https://www.apple.com/library/test/success.html
       interval: 300
     proxy: DIRECT
+    path: ./providers/proxy/provider1.yaml         # 订阅连接保存地址（可选），设置后保存在 /etc/nikki/run/providers/proxy/provider1.yaml 
   MyVPS:
-    url: "https://substore2"                       # 订阅连接 1
+    <<: *proxy-providers-general
+    url: "https://substore2"                       # 订阅连接 2
     type: http
     interval: 86400
     health-check:
@@ -217,8 +220,10 @@ proxy-providers:
       url: https://www.apple.com/library/test/success.html
       interval: 300
     proxy: DIRECT
+    path: ./providers/proxy/provider2.yaml         # 订阅连接保存地址（可选），设置后保存在 /etc/nikki/run/providers/proxy/provider2.yaml 
   Free:
-    url: "https://substore3"                       # 订阅连接 1
+    <<: *proxy-providers-general
+    url: "https://substore3"                       # 订阅连接 3
     type: http
     interval: 86400
     health-check:
@@ -226,6 +231,7 @@ proxy-providers:
       url: https://www.apple.com/library/test/success.html
       interval: 300
     proxy: DIRECT
+    path: ./providers/proxy/provider3.yaml         # 订阅连接保存地址（可选），设置后保存在 /etc/nikki/run/providers/proxy/provider3.yaml 
 
 ## 代理组设置---------------------------------------------------------------------------------------------------
 use-all-proxy-providers: &use-all-proxy-providers  # 代理组默认使用的订阅连接
