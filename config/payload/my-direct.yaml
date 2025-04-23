@@ -6,6 +6,11 @@ payload:
   - DOMAIN-SUFFIX,heipg.cn
   - DOMAIN-SUFFIX,macked.app
   - DOMAIN-SUFFIX,digit77.com
+  # 知末网 SU素材下载
+  - DOMAIN-SUFFIX,znzmo.com
+  - DOMAIN-SUFFIX,znzmoimg.com
+  - DOMAIN-SUFFIX,znzmoimg.com
+  - DOMAIN-SUFFIX,znzmostatic.com
   # NAME: Autodesk Fusion
   - DOMAIN-SUFFIX,autodesk.com
   - DOMAIN-SUFFIX,autodesk360.com
