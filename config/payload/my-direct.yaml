@@ -19,6 +19,9 @@ payload:
   - DOMAIN-SUFFIX,launchdarkly.com
   #- DOMAIN-SUFFIX,amazonaws.com
   - DOMAIN-SUFFIX,akamaitechnologies.com
+  # Adobe 
+  - DOMAIN,photos.adobe.io #若不放行 PS 将崩溃
+  - DOMAIN,lcs-cops.adobe.io #若不放行 Lr 或 Lrc 将崩溃
 
   #################### 杂项
   # CN域名
