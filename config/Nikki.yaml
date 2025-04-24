@@ -465,6 +465,11 @@ rules:
   - RULE-SET,my-proxy,🌍PROXY                         # 自用需要代理网站
   - RULE-SET,my-direct,🌐DIRECT                       # 自用的直连网站
 
+  # Adobe 激活验证相关
+  - DOMAIN,photos.adobe.io,DIRECT                     # 若不放行 PS 将崩溃
+  - DOMAIN,lcs-cops.adobe.io,DIRECT                   # 若不放行 Lr 或 Lrc 将崩溃
+  - DOMAIN-SUFFIX,adobe.io,REJECT                     # 屏蔽 Adobe 的验证服务，注意在上面先放行 photos.adobe.io 和 lcs-cops.adobe.io
+
   # 广告拦截与私有地址绕过块
   - GEOIP,private,DIRECT,no-resolve                   # 私有地址直连
   - GEOSITE,private,DIRECT                            # 私有地址直连
@@ -497,6 +502,7 @@ rules:
   - GEOSITE,category-container,🌍PROXY                # 各种容器服务
   - GEOSITE,python,🌍PROXY                            # Python服务，例如pip直连下载较慢
   - GEOSITE,category-porn,🌍PROXY                     # X服务
+ 
 
   # 兜底规则块，一般精细的分流规则应在其上
   - GEOSITE,gfw,🌍PROXY                               # GFW兜底
